@@ -110,7 +110,7 @@ def experiment_2(train_set, alpha, lambda_):
         w = w + delta_w
     return w
 
-error2 = [[], [], [], [], [], [], [], [], [], [], []]
+error2 = [[]*11]
 for i in range(len(error2)):
     for j in range(len(alphas)):
         error2[i].append([])
@@ -121,7 +121,7 @@ for j in range(len(lambdas_2)):
             predict2 = experiment_2(training_set[i], alphas[k], lambdas_2[j])
             error2[j][k].append(rmse(predict2))
 
-rmse2 = [[], [], [], [], [], [], [], [], [], [], []]
+rmse2 = [[]*11]
 for j in range(len(lambdas_2)):
     for k in range(len(alphas)):
         rmse2[j].append(np.mean(error2[j][k]))
